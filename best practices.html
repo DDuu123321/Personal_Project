@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Best Practices</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Meta description for SEO -->
+    <meta name="description" content="Learn and track web development best practices to improve your website's quality and performance.">
+    <style>
+        /* 新增卡片样式 */
+        .category-header {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin: 2rem 0;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #e9ecef;
+        }
+        
+        .category-header::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .practice-card {
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            background-color: #fff;
+            border-left: 4px solid transparent;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .practice-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .practice-card.checked {
+            border-left-color: var(--secondary-color);
+        }
+        
+        .card-header {
+            padding: 1rem;
+            background-color: rgba(63, 81, 181, 0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .card-header h3 {
+            font-size: 1.2rem;
+            margin: 0;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .practice-tag {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .tag-essential {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .tag-intermediate {
+            background-color: #2196F3;
+            color: white;
+        }
+        
+        .tag-advanced {
+            background-color: #9C27B0;
+            color: white;
+        }
+        
+        .card-body {
+            padding: 1.25rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-description {
+            flex-grow: 1;
+        }
+        
+        .code-sample {
+            background-color: #f8f9fa;
+            padding: 0.75rem;
+            border-radius: 4px;
+            font-family: monospace;
+            margin: 0.75rem 0;
+            font-size: 0.9rem;
+            color: #333;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .checkbox-toggle {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .checkbox-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .toggle-slider {
+            background-color: var(--secondary-color);
+        }
+        
+        input:checked + .toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        /* 固定卡片高度，保证整齐 */
+        .category-row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .category-row > div {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* 确保信息框保持样式一致 */
+        .info-alert {
+            background-color: #e3f2fd;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .info-alert i {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #0d6efd;
+        }
+        
+        .info-alert p {
+            margin-bottom: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="best practices.html">DevBestPractices</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="best practices.html" aria-current="page">Best Practices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cv.html">My CV</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Banner -->
+    <header class="py-5 text-center header-banner">
+        <div class="container">
+            <h1 class="fw-bold">Web Development Best Practices</h1>
+            <div class="lead-container">
+                <p class="lead">Check which best practices you follow in your own web projects!</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-4">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="best-practices-container">
+                    <!-- Instructions -->
+                    <div class="info-alert">
+                        <i class="fas fa-info-circle"></i>
+                        <div>
+                            <h4 class="mb-2">How to use this tool</h4>
+                            <p>Review each best practice below and toggle the ones that you implement in your web projects. Your selections will be saved automatically and you can return to this page anytime to update your choices.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- HTML Best Practices -->
+                    <h2 id="html-category" class="category-header">HTML</h2>
+                    <div class="row category-row" id="html-practices">
+                        <!-- Practices will be dynamically populated here -->
+                        <div class="col-12 text-center py-3">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading best practices...</span>
+                            </div>
+                            <p>Loading best practices...</p>
+                        </div>
+                    </div>
+                    
+                    <!-- CSS Best Practices -->
+                    <h2 id="css-category" class="category-header">CSS</h2>
+                    <div class="row category-row" id="css-practices">
+                        <!-- Practices will be dynamically populated here -->
+                    </div>
+                    
+                    <!-- JavaScript Best Practices -->
+                    <h2 id="js-category" class="category-header">JavaScript</h2>
+                    <div class="row category-row" id="js-practices">
+                        <!-- Practices will be dynamically populated here -->
+                    </div>
+                    
+                    <!-- Generic Best Practices -->
+                    <h2 id="generic-category" class="category-header">Generic</h2>
+                    <div class="row category-row" id="generic-practices">
+                        <!-- Practices will be dynamically populated here -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="summary-container p-4 sticky-top">
+                    <h3 class="text-center mb-4">Your Progress</h3>
+                    
+                    <!-- Circular progress design -->
+                    <div class="progress-container">
+                        <div class="circular-progress">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Background circle -->
+                                <circle class="progress-bg" cx="50" cy="50" r="45" />
+                                <!-- Progress circle -->
+                                <circle class="progress-bar-circle" id="progress-circle" cx="50" cy="50" r="45" />
+                            </svg>
+                            <div class="progress-percentage" id="progress-percentage">0%</div>
+                        </div>
+                        <div class="progress-details">
+                            <p class="practices-count"><span id="completed-practices">0</span>/<span id="total-practices">0</span></p>
+                            <p class="practices-label">Practices Completed</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-center mt-4">Need 12 practices to earn a reward</p>
+                    
+                    <!-- Success message and reward -->
+                    <div id="success-message" class="reward-container mt-3 d-none">
+                        <div class="reward-header">
+                            <div class="reward-icon">🏆</div>
+                            <h4>Congratulations!</h4>
+                        </div>
+                        <div id="animal-container" class="reward-image mt-3" aria-live="polite">
+                            <!-- Animal image will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Reset button -->
+                    <div class="text-center mt-3 pt-2 border-top">
+                        <button id="reset-progress" class="btn btn-outline-secondary btn-sm">
+                            <i class="fas fa-undo" aria-hidden="true"></i> Reset Progress
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-4 text-white text-center">
+        <div class="container">
+            <p>&copy; 2025 DevBestPractices. CITS5505 Assessment.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+    // This script ensures bestpractices.js is loaded correctly
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM fully loaded');
+        
+        // Add basic fallback to ensure cards are shown
+        if (typeof renderBestPractices === 'undefined') {
+            console.log('renderBestPractices is undefined, loading fallback display');
+            
+            // Simple fallback to show loading
+            setTimeout(function() {
+                const containers = ['#html-practices', '#css-practices', '#js-practices', '#generic-practices'];
+                containers.forEach(container => {
+                    const el = document.querySelector(container);
+                    if (el) {
+                        el.innerHTML = '<div class="col-12"><p>Please make sure bestpractices.js is loaded correctly.</p></div>';
+                    }
+                });
+            }, 2000);
+        }
+    });
+    </script>
+    
+    <script src="js/bestpractices.js"></script>
+</body>
+</html>

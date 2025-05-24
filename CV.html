@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CV - Web Developer</title>
+    <!-- External CSS libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="cv-page">
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="best practices.html">Curriculum Vitae</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="best practices.html">Best Practices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="cv.html">My CV</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="container">
+            <div class="top-nav-content">
+                <div class="contact-info">
+                    <span><i class="fas fa-envelope"></i> 123456789@student.uwa.edu.au</span>
+                    <span><i class="fas fa-phone"></i> (061) 123456789</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Perth, Western Australia</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/username" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:123456789@student.uwa.edu.au" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- In-page Navigation -->
+    <nav class="page-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#contact-bg"><i class="fas fa-user-circle"></i> Contact</a></li>
+                <li><a href="#education-bg"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                <li><a href="#work-bg"><i class="fas fa-briefcase"></i> Experience</a></li>
+                <li><a href="#certifications-section"><i class="fas fa-certificate"></i> Certifications</a></li>
+                <li><a href="#skills-section"><i class="fas fa-tools"></i> Skills</a></li>
+                <li><a href="#projects-section"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                <li><a href="#references-section"><i class="fas fa-user-tie"></i> References</a></li>
+                <li><a href="#sources-section"><i class="fas fa-book"></i> Sources</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Contact & About Section -->
+    <section class="contact-about-section py-5 fade-in-section" id="contact-bg">
+        <div class="container">
+            <!-- Contact Information Row -->
+            <div class="row mb-5">
+                <!-- Column for image and name -->
+                <div class="col-md-3 text-center mb-4 mb-md-0">
+                    <div class="profile-img-container-small">
+                        <img src="img/profile.jpg" alt="Profile Photo" class="profile-img-small">
+                    </div>
+                    <h2 class="student-name text-center mt-3">Name</h2>
+                </div>
+                <!-- Column for contact details -->
+                <div class="col-md-9">
+                    <h1 class="section-title"><i class="fas fa-user-circle"></i>Contact Information</h1>
+                    <div class="contact-details mt-4">
+                        <p><strong><i class="fas fa-envelope"></i></strong> Email: 123456789@student.uwa.edu.au</p>
+                        <p><strong><i class="fas fa-phone"></i></strong> Phone: (061) 123456789</p>
+                        <p><strong><i class="fas fa-map-marker-alt"></i></strong> Location: Perth, Western Australia</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- About Me Row -->
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="section-title"><i class="fas fa-user me-3"></i>About Me</h1>
+                    <div class="about-me-content">
+                        <p>I am a passionate web developer with a strong foundation in HTML, CSS, and JavaScript. My journey in web development began during my studies at the University of Western Australia, where I discovered my passion for creating beautiful, functional, and accessible web experiences.</p>
+                        <p>With a keen eye for detail and a commitment to following best practices, I strive to create websites that not only look great but also function flawlessly across all devices and browsers. I believe in writing clean, maintainable code and constantly stay updated with the latest web technologies and trends.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education-section py-5 fade-in-section" id="education-bg">
+        <div class="container">
+            <h1 class="section-title"><i class="fas fa-graduation-cap me-3"></i>Education</h1>
+            <div class="education-item mt-4">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h3>University of Western Australia</h3>
+                        <p class="degree">Master of Information Technology</p>
+                    </div>
+                    <div class="col-md-5 text-md-end">
+                        <p class="duration">2024 - Present</p>
+                    </div>
+                </div>
+                <p class="mb-1">I am currently pursuing a Master of Information Technology (2024-Present), specializing in Web Technologies. My advanced studies have expanded my expertise through coursework in advanced web development (CITS5505), cloud computing, machine learning applications, and user experience design.</p>
+            </div>
+            <div class="education-item mt-4">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h3>University of Western Australia</h3>
+                        <p class="degree">Bachelor of Information Security</p>
+                    </div>
+                    <div class="col-md-5 text-md-end">
+                        <p class="duration">2018 - 2022</p>
+                    </div>
+                </div>
+                <p class="mb-1">A dedicated technology professional with a comprehensive educational foundation from the University of Western Australia. My academic journey began with a Bachelor of Information Security (2018-2022), where I developed strong fundamentals in web technologies, data structures, algorithms, database systems, and web security.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Work Experience Section -->
+    <section class="work-section py-5 fade-in-section" id="work-bg">
+        <div class="container">
+            <h1 class="section-title"><i class="fas fa-briefcase me-3"></i>Work Experience</h1>
+            <div class="work-item mt-4">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3>Junior Web Developer</h3>
+                        <p class="company">TechWeb Solutions, Perth</p>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <p class="duration">2023 - Present</p>
+                    </div>
+                </div>
+                <p>As part of a dynamic development team, I've built responsive websites for clients across various industries using HTML5, CSS3, and JavaScript. I collaborate closely with designers and backend developers to implement intuitive user interfaces, and continuously optimize site performance for speed and scalability.</p>
+            </div>
+            <div class="work-item mt-4">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3>Web Development Intern</h3>
+                        <p class="company">Digital Creations, Perth</p>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <p class="duration">2022 - 2023</p>
+                    </div>
+                </div>
+                <p>During this internship, I assisted senior developers in building and maintaining client websites, gaining valuable hands-on experience with Bootstrap and jQuery frameworks. I regularly participated in code reviews, learning to implement feedback effectively and understanding the importance of collaborative development practices.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section py-5 fade-in-section" id="projects-section">
+        <div class="container">
+            <h1 class="section-title"><i class="fas fa-project-diagram me-3"></i>Projects</h1>
+            <div class="row mt-4" id="project-container">
+                <!-- Projects will be loaded via AJAX -->
+                <div class="col-12 text-center">
+                    <button id="load-projects" class="btn btn-primary btn-lg">Load My Projects</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section with Card Layout -->
+    <section class="skills-section py-5 fade-in-section" id="skills-section">
+        <div class="container">
+            <h1 class="section-title"><i class="fas fa-tools me-3"></i>Skills</h1>
+            
+            <div class="row">
+                <!-- Technical Skills Card -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="skill-card">
+                        <h3>Technical Skills</h3>
+                        <ul class="skill-list">
+                            <li>HTML5
+                                <div class="progress mt-1 mb-3">
+                                    <div class="progress-bar skill-html" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </li>
+                            <li>CSS3/SASS
+                                <div class="progress mt-1 mb-3">
+                                    <div class="progress-bar skill-css" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </li>
+                            <li>JavaScript
+                                <div class="progress mt-1 mb-3">
+                                    <div class="progress-bar skill-js" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </li>
+                            <li>jQuery
+                                <div class="progress mt-1 mb-3">
+                                    <div class="progress-bar skill-jquery" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </li>
+                            <li>Responsive Design
+                                <div class="progress mt-1 mb-3">
+                                    <div class="progress-bar skill-responsive" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Languages Card -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="skill-card">
+                        <h3>Languages</h3>
+                        <div class="language-item d-flex justify-content-between align-items-center mb-3">
+                            <span class="language-name">Mandarin</span>
+                            <div class="language-level">
+                                <span class="level-dot mandarin-dot-1" aria-hidden="true"></span>
+                                <span class="level-dot mandarin-dot-2" aria-hidden="true"></span>
+                                <span class="level-dot mandarin-dot-3" aria-hidden="true"></span>
+                                <span class="level-dot mandarin-dot-4" aria-hidden="true"></span>
+                                <span class="level-dot mandarin-dot-5" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                        <div class="language-item d-flex justify-content-between align-items-center mb-3">
+                            <span class="language-name">English</span>
+                            <div class="language-level">
+                                <span class="level-dot english-dot-1" aria-hidden="true"></span>
+                                <span class="level-dot english-dot-2" aria-hidden="true"></span>
+                                <span class="level-dot english-dot-3" aria-hidden="true"></span>
+                                <span class="level-dot" aria-hidden="true"></span>
+                                <span class="level-dot" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Other Skills Card -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="skill-card">
+                        <h3>Other Skills</h3>
+                        <ul class="list-styled">
+                            <li>Git, GitHub</li>
+                            <li>RESTful API Integration</li>
+                            <li>Agile Development</li>
+                            <li>UI/UX Design Principles</li>
+                            <li>Web Performance Optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sources Section -->
+    <section class="sources-section py-5 fade-in-section" id="sources-section">
+        <div class="container">
+            <h1 class="section-title"><i class="fas fa-book me-3"></i>Sources & References</h1>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h3>Technical References</h3>
+                    <ul>
+                        <li>W3Schools. (n.d.). <em>HTML tutorial</em>. W3Schools Online Web Tutorials. <a href="https://www.w3schools.com" target="_blank">https://www.w3schools.com</a></li>
+                        <li>Mozilla Developer Network. (n.d.). <em>Web technology references</em>. MDN Web Docs. <a href="https://developer.mozilla.org" target="_blank">https://developer.mozilla.org</a></li>
+                        <li>Bootstrap Team. (2023). <em>Bootstrap documentation (Version 5.3)</em> [Computer software]. <a href="https://getbootstrap.com" target="_blank">https://getbootstrap.com</a></li>
+                        <li>Font Awesome. (2023). <em>Icon library and toolkit</em> [Computer software]. <a href="https://fontawesome.com" target="_blank">https://fontawesome.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3>APIs Used</h3>
+                    <ul>
+                        <li>jQuery Documentation. (2024). <i>jQuery API</i>. Available at: <a href="https://api.jquery.com/" target="_blank">https://api.jquery.com/</a> [Accessed 22 Mar. 2025].</li>
+                        <li>The Dog API. (2024). <em>Dog API</em>. Used for retrieving random dog images. <a href="https://dog.ceo/dog-api/" target="_blank">https://dog.ceo/dog-api/</a></li>
+                    </ul>
+                    
+                    <h3>AI Assistance</h3>
+                    <ul>
+                        <li>Claude 3.7 Sonnet and GitHub Copilot provided assistance with logical content organization, consistent formatting, and text enhancement. Suggestions from both AIs were also incorporated during code review.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <footer class="py-4 text-white text-center">
+        <div class="container">
+            <p>&copy; 2025 Curriculum Vitae. CITS5505 Assessment.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/cv.js"></script>
+    
+    <!-- Page Navigation Script -->
+    <script>
+    // Wait for DOM to load
+    document.addEventListener('DOMContentLoaded', function() {
+        // In-page navigation active state
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.page-nav ul li a');
+        
+        // Scroll listener for navigation highlighting and back-to-top button
+        window.addEventListener('scroll', function() {
+            // Find current section
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if(pageYOffset >= (sectionTop - 180)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            // Update active navigation link
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Show/hide back to top button
+            const backToTop = document.getElementById('backToTop');
+            backToTop.classList.toggle('visible', pageYOffset > 300);
+        });
+        
+        // Back to top button click event
+        document.getElementById('backToTop').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Handle scroll animations
+        const scrollElements = document.querySelectorAll('.fade-in-section');
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend;
+        };
+        
+        const handleScrollAnimation = () => {
+            scrollElements.forEach(el => {
+                if(elementInView(el, 1.25)) {
+                    el.classList.add('is-visible');
+                }
+            });
+        };
+        
+        // Initialize animations
+        handleScrollAnimation();
+        window.addEventListener('scroll', handleScrollAnimation);
+    });
+    </script>
+</body>
+</html>

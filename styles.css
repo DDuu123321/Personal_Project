@@ -1,0 +1,1049 @@
+/**
+ * Main stylesheet for DevBestPractices and CV pages
+ * CITS5505 Assessment
+ */
+
+/* ===== Global Variables ===== */
+:root {
+  /* Main colors for both pages */
+  --primary-color: #4a6da7;  /* Blue base color */
+  --primary-light: #798fb7;
+  --primary-dark: #2c4b7c;
+  --secondary-color: #5d80ad;  /* Slightly lighter than primary */
+  --secondary-light: #8ea7c8;
+  --secondary-dark: #3e5e8e;
+  --accent-color: #7086b6;
+  --dark-color: #2c4b7c;
+  --light-color: #f8f9fc;
+  --gray-color: #6c757d;
+  --text-color: #2d3748;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  --box-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.12);
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+  --section-padding: 5rem 0;
+  
+  /* Best Practices page colors */
+  --bp-primary-color: #3f51b5;
+  --bp-primary-light: #757de8;
+  --bp-primary-dark: #1a237e;
+  --bp-secondary-color: #4caf50;
+  --bp-secondary-light: #80e27e;
+  --bp-secondary-dark: #087f23;
+}
+
+/* ===== Global Styles ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--light-color);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  transition: var(--transition);
+  color: var(--primary-color);
+}
+
+a:hover { color: var(--primary-dark); }
+
+section { scroll-margin-top: 120px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-color);
+}
+
+/* ===== Navigation ===== */
+.navbar {
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white !important;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85) !important;
+  transition: var(--transition);
+  padding: 8px 16px !important;
+  margin: 0 4px;
+  border-radius: var(--border-radius);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+}
+
+/* ====================================================================
+ BEST PRACTICES PAGE SPECIFIC STYLES
+ ==================================================================== */
+
+/* Apply original styles only to the Best Practices page */
+body:not(.cv-page) .navbar,
+body:not(.cv-page) footer {
+  background-color: var(--bp-primary-color);
+}
+
+body:not(.cv-page) .nav-link:hover, 
+body:not(.cv-page) .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Header Banner */
+.header-banner {
+  background: linear-gradient(135deg, var(--bp-primary-color) 0%, var(--bp-primary-dark) 100%);
+  color: white;
+  padding: 4rem 0 !important;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.header-banner h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  color: white;
+}
+
+.header-banner h1::after {
+  content: '';
+  display: block;
+  width: 600px;
+  max-width: 90%;
+  height: 4px;
+  background-color: var(--bp-secondary-color);
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+/* Best practices container */
+.best-practices-container {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+}
+
+/* Info alert styling */
+.info-alert {
+  background-color: #e3f2fd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.info-alert i {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: #0d6efd;
+}
+
+.info-alert p {
+  margin-bottom: 0;
+  color: #333;
+}
+
+/* Category headers */
+.category-header {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 2rem 0;
+  color: var(--bp-primary-color);
+  position: relative;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #e9ecef;
+}
+
+.category-header::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background-color: var(--bp-secondary-color);
+}
+
+/* Practice cards */
+.practice-card {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 1.5rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  border-left: 4px solid transparent;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.practice-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.practice-card.checked {
+  border-left-color: var(--bp-secondary-color);
+}
+
+.card-header {
+  padding: 1rem;
+  background-color: rgba(63, 81, 181, 0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-header h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: var(--bp-primary-color);
+  font-weight: 600;
+}
+
+/* Practice card tags */
+.practice-tag {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.tag-essential {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.tag-intermediate {
+  background-color: #2196F3;
+  color: white;
+}
+
+.tag-advanced {
+  background-color: #9C27B0;
+  color: white;
+}
+
+.card-body {
+  padding: 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-description {
+  flex-grow: 1;
+}
+
+/* Code sample displays */
+.code-sample {
+  background-color: #f8f9fa;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-family: monospace;
+  margin: 0.75rem 0;
+  font-size: 0.9rem;
+  color: #333;
+  border-left: 3px solid var(--bp-primary-color);
+}
+
+/* Toggle switch for practice completion */
+.checkbox-toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.checkbox-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: var(--bp-secondary-color);
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(26px);
+}
+
+/* Category row layout */
+.category-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category-row > div {
+  margin-bottom: 1.5rem;
+}
+
+/* Progress summary container */
+.summary-container {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-top: 2rem;
+  position: sticky;
+  top: 75px; 
+}
+
+/* Progress indicator */
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 0.5rem;
+}
+
+.circular-progress {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.circular-progress svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-bg {
+  fill: none;
+  stroke: #e6e6e6;
+  stroke-width: 8;
+}
+
+.progress-bar-circle {
+  fill: none;
+  stroke: var(--bp-primary-color);
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.8s ease;
+}
+
+.progress-percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--bp-primary-color);
+}
+
+.progress-details {
+  text-align: center;
+}
+
+.practices-count {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0;
+  color: var(--bp-primary-color);
+}
+
+.practices-label {
+  font-size: 0.9rem;
+  color: var(--gray-color);
+  margin-top: 0;
+}
+
+/* Reward container for achievement */
+.reward-container {
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+  margin-top: 1.5rem;
+}
+
+.reward-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.reward-icon {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+.reward-header h4 {
+  margin: 0;
+  color: #2e7d32;
+  font-weight: 700;
+}
+
+.reward-image {
+  position: relative;
+  margin: 1rem auto;
+  width: 90%;
+  max-width: 300px;
+}
+
+.reward-image img {
+  width: 80%;
+  display: block;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.reward-message {
+  color: #2e7d32;
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+/* Reset button */
+#reset-progress {
+  transition: var(--transition);
+}
+
+#reset-progress:hover {
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+.summary-container .border-top {
+  border-top-color: #eee !important;
+  margin-top: 1rem;
+}
+
+/* Success state styles for progress indicator */
+.success-state .progress-bar-circle {
+  stroke: var(--bp-secondary-color);
+}
+
+.success-state .progress-percentage {
+  color: var(--bp-secondary-color);
+}
+
+.success-state .circular-progress {
+  animation: pulse 2s infinite;
+}
+
+/* ====================================================================
+ CV PAGE SPECIFIC STYLES
+ ==================================================================== */
+
+/* Top navigation for CV page */
+.top-nav {
+  background-color: var(--dark-color);
+  padding: 8px 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+}
+
+.top-nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-info span {
+  margin-right: 20px;
+}
+
+.contact-info i {
+  margin-right: 5px;
+  color: var(--secondary-light);
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+}
+
+.social-links a {
+  color: rgba(255, 255, 255, 0.9);
+  margin-left: 15px;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.social-links a:hover {
+  color: white;
+  background-color: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+/* In-page navigation for CV */
+.page-nav {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 10px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 67px;
+  z-index: 999;
+}
+
+.page-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.page-nav ul li { margin: 0 5px; }
+
+.page-nav ul li a {
+  display: block;
+  padding: 8px 15px;
+  color: var(--primary-color);
+  font-weight: 500;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.page-nav ul li a:hover, .page-nav ul li a.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.page-nav ul li a i { margin-right: 5px; }
+
+/* CV page section backgrounds with harmonious blues */
+.cv-page .contact-about-section {
+  background: linear-gradient(135deg, #f8f9fc 0%, #edf2fc 100%);
+  padding: var(--section-padding);
+  position: relative;
+}
+
+.cv-page .education-section {
+  background: linear-gradient(135deg, #edf2fc 0%, #e3ebfb 100%);
+  padding: var(--section-padding);
+  position: relative;
+}
+
+.cv-page .work-section {
+  background: linear-gradient(135deg, #e3ebfb 0%, #dae5fa 100%);
+  padding: var(--section-padding);
+  position: relative;
+}
+
+.cv-page .skills-section, .cv-page .projects-section, 
+.cv-page .references-section, .cv-page .sources-section {
+  background: linear-gradient(135deg, #dae5fa 0%, #c6d9f8 100%);
+  padding: var(--section-padding);
+  position: relative;
+}
+
+/* CV content styling */
+.cv-page .section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding: 10px 15px;
+  position: relative;
+  display: inline-block;
+  border-radius: var(--border-radius);
+  color: var(--primary-color);
+}
+
+.cv-page .section-title i {
+  margin-right: 15px;
+  color: inherit;
+}
+
+.cv-page .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: var(--secondary-color);
+}
+
+/* Profile image styling */
+.profile-img-container-small {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 20px auto 0;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transition: transform 0.5s ease;
+}
+
+.profile-img-container-small:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.profile-img-small {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.profile-img-small:hover {
+  transform: scale(1.05);
+}
+
+.student-name {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: block;
+  padding-bottom: 12px;
+}
+
+/* Contact details section */
+.contact-details {
+  background-color: white;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid var(--primary-color);
+}
+
+.contact-details p {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+  color: var(--text-color);
+  position: relative;
+  padding-left: 28px;
+}
+
+.contact-details p:last-child {
+  margin-bottom: 0;
+}
+
+.contact-details p strong {
+  color: var(--primary-color);
+  margin-right: 8px;
+  position: absolute;
+  left: 0;
+}
+
+/* About me content */
+.about-me-content {
+  background-color: white;
+  padding: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid var(--secondary-color);
+  margin-top: 1rem;
+  line-height: 1.7;
+}
+
+.about-me-content p {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.about-me-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Education section */
+.education-item, .work-item {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 90%;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  border-left: 4px solid var(--primary-color);
+}
+
+.work-item {
+  border-left-color: var(--accent-color);
+}
+
+.education-item:hover, .work-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.education-item h3, .work-item h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.3rem;
+  font-size: 1.35rem;
+}
+
+.institution, .degree, .company {
+  font-size: 1.05rem;
+  color: var(--gray-color);
+  font-weight: 500;
+}
+
+.duration {
+  font-size: 0.95rem;
+  color: var(--gray-color);
+  font-weight: 500;
+}
+
+/* Skills section */
+.skill-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  height: 100%;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-hover);
+}
+
+.skill-card h3 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 10px;
+}
+
+/* Skill progress bars */
+.progress {
+  height: 12px;
+  border-radius: 6px;
+  background-color: #e0e0e0;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background-color: var(--primary-color);
+  border-radius: 6px;
+  transition: width 0.6s ease;
+  z-index: 4;
+}
+
+/* Skill bar colorization */
+.progress-bar.skill-html, 
+.progress-bar.skill-responsive {
+  background-color: #4CAF50 !important;
+}
+
+.progress-bar.skill-css {
+  background-color: #2196F3 !important;
+}
+
+.progress-bar.skill-js {
+  background-color: #FF9800 !important;
+}
+
+.progress-bar.skill-jquery {
+  background-color: #9C27B0 !important;
+}
+
+/* Skill bar animations */
+.progress-bar.skill-html {
+  animation: skillHtml 1.5s forwards;
+  width: 0;
+}
+
+.progress-bar.skill-css {
+  animation: skillCss 1.5s forwards 0.3s;
+  animation-fill-mode: both;
+  width: 0;
+}
+
+.progress-bar.skill-js {
+  animation: skillJs 1.5s forwards 0.6s;
+  animation-fill-mode: both;
+  width: 0
+}
+
+.progress-bar.skill-jquery {
+  animation: skillJquery 1.5s forwards 0.9s;
+  animation-fill-mode: both;
+  width: 0
+}
+
+.progress-bar.skill-responsive {
+  animation: skillResponsive 1.5s forwards 1.2s;
+  animation-fill-mode: both;
+  width: 0
+}
+
+/* Language levels styling */
+.language-name {
+  font-weight: 500;
+  font-size: 1.15rem;
+  color: var(--text-color);
+}
+
+.language-level {
+  display: flex;
+}
+
+.level-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  margin-left: 8px;
+  opacity: 0.3;
+}
+
+/* Language dot animations */
+.mandarin-dot-1, .mandarin-dot-2, .mandarin-dot-3, 
+.mandarin-dot-4, .mandarin-dot-5, .english-dot-1, 
+.english-dot-2, .english-dot-3 {
+  background-color: var(--primary-color);
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.mandarin-dot-1 { animation: languageDotAppear 0.3s forwards 0.1s; }
+.mandarin-dot-2 { animation: languageDotAppear 0.3s forwards 0.3s; }
+.mandarin-dot-3 { animation: languageDotAppear 0.3s forwards 0.5s; }
+.mandarin-dot-4 { animation: languageDotAppear 0.3s forwards 0.7s; }
+.mandarin-dot-5 { animation: languageDotAppear 0.3s forwards 0.9s; }
+.english-dot-1 { animation: languageDotAppear 0.3s forwards 0.2s; }
+.english-dot-2 { animation: languageDotAppear 0.3s forwards 0.4s; }
+.english-dot-3 { animation: languageDotAppear 0.3s forwards 0.6s; }
+
+/* Project cards */
+.project-card {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: var(--transition);
+  height: 100%;
+  background-color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  position: relative;
+  border-top: 4px solid var(--secondary-color);
+}
+
+.project-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: var(--box-shadow-hover);
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 99;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes skillHtml {
+  from { width: 0; }
+  to { width: 95%; }
+}
+
+@keyframes skillCss {
+  from { width: 0; }
+  to { width: 90%; }
+}
+
+@keyframes skillJs {
+  from { width: 0; }
+  to { width: 85%; }
+}
+
+@keyframes skillJquery {
+  from { width: 0; }
+  to { width: 80%; }
+}
+
+@keyframes skillResponsive {
+  from { width: 0; }
+  to { width: 95%; }
+}
+
+@keyframes languageDotAppear {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Section animations */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Utility classes */
+.list-styled {
+  padding-left: 1.5rem;
+  margin-bottom: 0;
+}
+
+.list-styled li {
+  margin-bottom: 0.8rem;
+  position: relative;
+  font-size: 1.05rem;
+}
+
+.list-styled li::before {
+  content: '•';
+  color: var(--primary-color);
+  position: absolute;
+  left: -1rem;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* Accessibility */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 991.98px) {
+  :root {
+    --section-padding: 4rem 0;
+  }
+  .section-title { font-size: 1.8rem; }
+  .page-nav ul li a { padding: 6px 10px; font-size: 0.85rem; }
+}
+
+@media (max-width: 767.98px) {
+  :root {
+    --section-padding: 3rem 0;
+  }
+  .section-title { font-size: 1.6rem; }
+  .education-item, .work-item { max-width: 100%; }
+  .top-nav-content { flex-direction: column; align-items: center; }
+  .contact-info { margin-bottom: 10px; text-align: center; }
+  .contact-info span { display: block; margin: 5px 0; }
+  .social-links { justify-content: center; }
+  .social-links a { margin: 0 8px; }
+  .student-name { font-size: 1.8rem; }
+}
+
+@media (max-width: 575.98px) {
+  :root {
+    --section-padding: 2.5rem 0;
+  }
+  .section-title { font-size: 1.5rem; }
+  .page-nav ul { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 10px; }
+  .page-nav ul li a { white-space: nowrap; }
+  .reference-button { padding: 15px; }
+}
